@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vuejs Mouse Events</title>
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+
+    <style>
+      .box {
+        display: inline-block;
+        padding: 100px 0;
+        width: 500px;
+        background-color: #dddd;
+        margin: 20px;
+        text-align: center;
+        border: #4b4b4b solid 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="margin-left: 40px; text-decoration: underline">
+      Vue js Mouse Events
+    </h1>
+    <div id="template">
+      <div class="box" @mouseover="handleMouseOver">mouse over</div>
+      <div class="box" @mouseleave="handleMouseLeave">mouse leave</div>
+      <div class="box" @dblclick="handleDoubleClick">double click</div>
+      <div class="box" @mousemove="handleMouseMove">
+        mouse position - {{ mouseX }}: {{mouseY}}
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
