@@ -4,9 +4,21 @@ const app = Vue.createApp({
       showBook: true,
 
       books: [
-        { author: "George Orwell", book: "1984" },
-        { author: "O'tkir Hoshimov", book: "Ikki eshik orasi" },
-        { author: "Fyodr Dostoevskiy", book: "Telba" },
+        {
+          author: "Fyodr Dostoevskiy",
+          book: "Jinoyat va jazo",
+          img: "assets/jinoyatvajazo.webp",
+        },
+        {
+          author: "O'tkir Hoshimov",
+          book: "Ikki eshik orasi",
+          img: "assets/ikki-eshik-orasi.jpg",
+        },
+        {
+          author: "Fyodr Dostoevskiy",
+          book: "Telba",
+          img: "assets/telba.jpg",
+        },
       ],
     };
   },

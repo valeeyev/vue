@@ -3,14 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Get Data from Arrays</title>
+    <title>Attribute binding</title>
     <script src="https://unpkg.com/vue@3.0.2"></script>
+    <style>
+      img {
+        width: 200px;
+      }
+    </style>
   </head>
   <body>
     <div id="main">
       <div id="showBook" v-if="showBook">
-        <ul>
-          <li v-for=" i in books">{{i.author}} - {{i.book}}</li>
+        <ul v-for=" i in books">
+          <li>{{i.author}} - {{i.book}}</li>
+          <img :src="i.img" :alt="i.book" />
         </ul>
       </div>
       <button @click="toggle">
