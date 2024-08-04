@@ -20,7 +20,7 @@ const app = Vue.createApp({
           author: "Fyodr Dostoevskiy",
           book: "Telba",
           img: "assets/telba.jpg",
-          liFav: false,
+          liFav: true,
         },
       ],
     };
@@ -31,6 +31,12 @@ const app = Vue.createApp({
     },
     Favbook(i) {
       i.liFav = !i.liFav;
+    },
+  },
+
+  computed: {
+    FilteredBooks() {
+      return this.books.filter((book) => book.liFav);
     },
   },
 });

@@ -37,7 +37,11 @@
     <div id="main">
       <div id="showBook" v-if="showBook">
         <ul>
-          <li v-for=" i in books" :class="{fav: i.liFav}" @click="Favbook(i)">
+          <li
+            v-for=" i in FilteredBooks"
+            :class="{fav: i.liFav}"
+            @click="Favbook(i)"
+          >
             <img :src="i.img" :alt="i.book" />
             <h2>{{i.author}} -</h2>
             <h3>{{i.book}}</h3>
