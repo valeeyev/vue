@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic classes</title>
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+    <style>
+      body {
+        background-color: #eee;
+        max-width: 960px;
+        margin: 20px auto;
+      }
+      ul {
+        margin: 0;
+      }
+      li {
+        list-style-type: none;
+        background-color: #fff;
+        margin: 20px auto;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        border-radius: 10px;
+      }
+      li.fav {
+        background: rgba(0, 128, 0, 0.355);
+      }
+      img {
+        width: 120px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <div id="showBook" v-if="showBook">
+        <ul>
+          <li v-for=" i in books" :class="{fav: i.liFav}" @click="Favbook(i)">
+            <img :src="i.img" :alt="i.book" />
+            <h2>{{i.author}} -</h2>
+            <h3>{{i.book}}</h3>
+          </li>
+        </ul>
+      </div>
+      <button @click="toggle">
+        <span v-if="showBook">Hide Book</span>
+        <span v-else>Show Book</span>
+      </button>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
